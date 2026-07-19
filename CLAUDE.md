@@ -127,16 +127,21 @@ labeled one is not.**
   resolves it true or refuted.
 
 ## What this project is
-The strategy room for **Dossier [NNN / short-name]: [ONE-LINE TOPIC]**.
+The strategy room for **Dossier US-Electricity-001: U.S. Electricity (working title) — topic and thesis to be set during recon; this is a fresh spawn with no research entered yet.**
 Connected repo: this synced repository. The dossier's two reading
 surfaces (the self-explaining front door and the audit trail), its manuscript, its
 verification script, and its claim ledger all live here.
 
 ## Standing context (edit per dossier)
-- [List this dossier's open claims by ledger id.]
-- [List current open red-team findings.]
-- [Note anything a fresh session must know: the topic's sensitivities, the
-  key prior work, the boldest claims and exactly how they're labeled.]
+- **Fresh spawn — research not yet started.** The editions still carry the
+  template's PLACEHOLDER avenue scaffolding and example citation chips; these
+  get replaced during recon, wearing honest status labels from the moment real
+  content lands.
+- Open claims: None entered yet — build during recon.
+- Open red-team findings: None yet.
+- [Note anything a fresh session must know once research begins: the topic's
+  sensitivities, the key prior work, the boldest claims and exactly how they're
+  labeled.]
 
 ## Geography (three layers)
 1. **GitHub = the truth.** The synced repo is the canonical state.

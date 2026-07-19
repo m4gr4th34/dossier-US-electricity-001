@@ -1,10 +1,10 @@
 An Open Dossier · **NNN**
 
-# @@TITLE@@
+# U.S. Electricity (working title)
 
-*@@NAME@@ — @@AFFILIATION@@*
+*Irfan Ali-Khan — Independent Researcher*
 
-@@ABSTRACT@@. This dossier surveys @@FIELD@@: the live avenues, what each rests on, and where the open questions and forward bets sit. Every card in the landscape below carries an honest status label — established findings asserted, open questions and forecasts labeled as such. End it with: **Don't trust this paper — run it.**
+Working draft — research in progress. This dossier surveys the U.S. electricity system: the live avenues, what each rests on, and where the open questions and forward bets sit. Every card in the landscape below carries an honest status label — established findings asserted, open questions and forecasts labeled as such. End it with: **Don't trust this paper — run it.**
 
 ## Avenues
 

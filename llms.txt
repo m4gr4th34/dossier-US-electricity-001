@@ -1,6 +1,6 @@
-# @@TITLE@@
+# U.S. Electricity (working title)
 
-> @@ABSTRACT@@.
+> Working draft — research in progress.
 
 ## Working draft
 
