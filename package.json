@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "render-math": "node render_math.js",
-    "render-figures": "node render_figures.js",
+    "render-figures": "node render_figures.js editions/index.source.html",
     "render-edition": "node render_edition.js",
     "check-edition": "node verify_edition.js",
     "render-markdown": "node render_markdown.js",

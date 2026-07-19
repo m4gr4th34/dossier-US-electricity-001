@@ -407,10 +407,10 @@
 </header>
 <div class="wrap">
   <div class="statusbar">
-    <span class="chip"><span class="dot t"></span>avenues&nbsp;<b>N surveyed</b></span>
-    <span class="chip"><span class="dot v"></span>forecasts&nbsp;<b>N (all signposted)</b></span>
-    <span class="chip"><span class="dot g"></span>citations&nbsp;<b>N verified · N flagged</b></span>
-    <span class="chip"><span class="dot o"></span>red team&nbsp;<b>N resolved · N open</b></span>
+    <span class="chip"><span class="dot t"></span>avenues&nbsp;<b>10 surveyed</b></span>
+    <span class="chip"><span class="dot v"></span>forecasts&nbsp;<b>2 (all signposted)</b></span>
+    <span class="chip"><span class="dot g"></span>citations&nbsp;<b>6 verified · 1 attributed</b></span>
+    <span class="chip"><span class="dot o"></span>red team&nbsp;<b>0 resolved · 0 open</b></span>
   </div>
 
 <!-- ============================================================
@@ -490,10 +490,13 @@
 //               not independently reproduced — provenance, not a pass)
 // ---------------------------------------------------------------
 const cites = [
-  ["REF1", "Author et al. — Journal Vol, Page (Year)", "V"],
-  ["REF2", "Author et al. — Journal Vol, Page (Year)", "T"],
-  ["REF5", "Vendor roadmap / press release (Year)", "R"],
-  // add all your references here
+  ["C01", "EIA — 'Electricity in the U.S.', 2025 data (eia.gov/energyexplained/electricity/electricity-in-the-us.php): 2025 generation mix + record 4.43 trillion kWh total [ledger C01]", "V"],
+  ["C02", "EIA — 2025 electricity data (eia.gov): wind+solar (18%) exceeded coal (17%) for a 2nd year; power-sector emissions rose a 2nd consecutive year [ledger C02]", "V"],
+  ["C02b", "Canary Media / Distilled — analysis of EIA data: the precise ~+4.4% 2025 power-sector CO2 rise (attributed, not EIA-official) [ledger C02b]", "R"],
+  ["C03", "LBNL — 'Queued Up' 2025 edition (emp.lbl.gov): ~2,290 GW active queue end-2024; ~14% historical build; ~55-mo waits; ~112 GW solar+storage withdrawn 2024 [ledger C03]", "V"],
+  ["C04", "Lazard — 2026 LCOE+ report: new-build $/MWh ranges (solar 40–98, onshore wind 37–99, offshore 105–167, CCGT 51–129, peaking 144–276, nuclear 175–255) [ledger C04]", "V"],
+  ["C05", "GE Vernova disclosures / IEEFA 2025: gas-turbine lead times 5–7 yr, sold out toward 2030, prices ~+300% in 3 yr [ledger C05]", "V"],
+  ["C06", "Grid Strategies — National Load Growth Report (Nov 2025): ~166 GW peak-load growth by 2030, ~90 GW data centers (report projection, audited to primary) [ledger C06]", "V"],
 ];
 const lab = {
   V: ["VERIFIED — primary source", "v"],
