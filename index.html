@@ -351,12 +351,12 @@
       <a class="pv-item" href="https://github.com/m4gr4th34/dossier-US-electricity-001" target="_blank" rel="noopener"><span class="pv-k">Source</span><span class="pv-v">full history ↗</span></a>
     </div>
     <div class="lineage-strip" id="lineageStrip" aria-label="Lineage"></div>
-    <h1>U.S. Electricity (working title)</h1>
+    <h1>The State of US Electricity</h1>
     <div class="byline" id="byline">Irfan Ali-Khan — Independent Researcher</div>
   </div>
 </header>
 <div class="wrap">
-  <p class="abstract">Working draft — research in progress. This dossier surveys the U.S. electricity system: the live avenues, what each rests on, and where the open questions and forward bets sit. Every card in the landscape below carries an honest status label — established findings asserted, open questions and forecasts labeled as such. End it with: <b>Don't trust this paper — run it.</b></p>
+  <p class="abstract">Working draft — research in progress. This dossier surveys the U.S. electricity system as a landscape, not a single thesis: where power comes from today, what new supply is arriving, and how fast demand is now rising after two flat decades. The discipline is a clean split — the measured present is asserted plainly and cited; every forward-looking number wears a forecast label with its model and assumptions named. Each card below carries an honest status. End it with: <b>Don't trust this paper — run it.</b></p>
 
   <div class="howto">
     <b>How to read this:</b> the whole survey is on this one page, written to explain itself.
@@ -365,20 +365,14 @@
   </div>
 
 <!-- ============================================================
-     SURVEY LANDSCAPE — the survey-shaped scaffold's centrepiece.
-     One card per avenue/option in the field. Drive it from the
-     AVENUES array in the script below (single source -> cards).
-     Each card: name + one-line thesis, an honest status label,
-     an optional dated forecast, and its sources. The card's top
-     border is colored by status for at-a-glance scanning.
-     STATUS values: ESTABLISHED / OPEN-UNVERIFIED / FORECAST /
-     REPORTED (others fall back to a neutral chip + border).
+     SURVEY LANDSCAPE — one card per avenue in the field, driven
+     from avenues.json. Status colors the card border for scanning.
      ============================================================ -->
 <section id="landscape">
   <div class="kicker teal">THE LANDSCAPE · SURVEY</div>
   <h2>Avenues at a glance</h2>
   <p class="lede">Every avenue in this survey, each with its honest status label and — where the avenue is a forward bet — a dated forecast. <span class="mono">The labels are the verification here: each is exactly as strong as its evidence.</span></p>
-  <div class="av-grid" id="av-grid" data-baked="1"><div class="av-card t-est"><div class="av-top"><span class="av-name">PLACEHOLDER avenue A</span><span class="s-chip s-est">ESTABLISHED</span></div><p class="av-thesis">One-line thesis — what this avenue is and why it's in play.</p><div class="av-meta"><span class="srcs"><span class="ref">REF1</span><span class="ref">REF2</span></span></div></div><div class="av-card t-open"><div class="av-top"><span class="av-name">PLACEHOLDER avenue B</span><span class="s-chip s-open">OPEN-UNVERIFIED</span></div><p class="av-thesis">One-line thesis for an avenue with a central open question.</p><div class="av-meta"><span class="srcs"><span class="ref">REF3</span></span></div></div><div class="av-card t-forecast"><div class="av-top"><span class="av-name">PLACEHOLDER avenue C</span><span class="s-chip s-forecast">FORECAST</span></div><p class="av-thesis">One-line thesis for an avenue you're making a forward bet on.</p><div class="av-meta"><span class="fc"><span class="pct">~35%</span> <span class="by">by 2030</span></span><span class="srcs"><span class="ref">REF4</span></span></div></div><div class="av-card t-reported"><div class="av-top"><span class="av-name">PLACEHOLDER avenue D</span><span class="s-chip s-reported">REPORTED</span></div><p class="av-thesis">One-line thesis sourced only to an interested party / roadmap.</p><div class="av-meta"><span class="srcs"><span class="ref">REF5</span></span></div></div></div>
+  <div class="av-grid" id="av-grid" data-baked="1"><div class="av-card t-est"><div class="av-top"><span class="av-name">Grid-enhancing tech & reconductoring</span><span class="s-chip s-est">ESTABLISHED</span></div><p class="av-thesis">Advanced conductors + GETs unlock large grid capacity on existing rights-of-way in months, not years — the cheapest, fastest fix for the bottleneck that actually binds; under-deployed for incentive/regulatory reasons, not technical ones.</p><div class="av-meta"><span class="srcs"><span class="ref">WATT2025</span><span class="ref">CGEP2026</span><span class="ref">PNAS2024</span></span></div></div><div class="av-card t-est"><div class="av-top"><span class="av-name">Solar + storage (utility-scale)</span><span class="s-chip s-est">ESTABLISHED</span></div><p class="av-thesis">Cheapest and quickest-to-deploy new generation; batteries convert it toward firm. The constraint is interconnection, not cost.</p><div class="av-meta"><span class="srcs"><span class="ref">LazardLCOE2026</span><span class="ref">EIA2025mix</span><span class="ref">EIASTEO2026</span></span></div></div><div class="av-card t-forecast"><div class="av-top"><span class="av-name">Enhanced geothermal (EGS)</span><span class="s-chip s-forecast">FORECAST</span></div><p class="av-thesis">Firm, clean, 24/7 power from engineered hot-rock reservoirs using oil-and-gas drilling technique; first commercial-scale plant arriving now with a steep cost-down curve.</p><div class="av-meta"><span class="fc"><span class="pct">~80%</span> <span class="by">by Fervo Cape Station Phase 1 (100 MW) delivering to grid by end-2026; 500 MW by end-2028</span></span><span class="srcs"><span class="ref">Fervo2026</span><span class="ref">Canary2026geo</span><span class="ref">WoodMac2026</span></span></div></div><div class="av-card t-est"><div class="av-top"><span class="av-name">Nuclear restarts & uprates</span><span class="s-chip s-est">ESTABLISHED</span></div><p class="av-thesis">Fastest firm CLEAN megawatts available today — restarting or uprating existing reactors — but capped to a handful of restartable sites.</p><div class="av-meta"><span class="srcs"><span class="ref">Constellation2025</span><span class="ref">WNN2024</span></span></div></div><div class="av-card t-est"><div class="av-top"><span class="av-name">Onshore wind</span><span class="s-chip s-est">ESTABLISHED</span></div><p class="av-thesis">Still among the cheapest new-build, but siting/permitting headwinds and a sharp LCOE rise are slowing additions.</p><div class="av-meta"><span class="srcs"><span class="ref">LazardLCOE2026</span><span class="ref">EIASTEO2026</span></span></div></div><div class="av-card t-est"><div class="av-top"><span class="av-name">Natural gas CCGT</span><span class="s-chip s-est">ESTABLISHED</span></div><p class="av-thesis">The incumbent firm bridge — indispensable near-term, but not clean, and now equipment-constrained: large-frame turbines are effectively sold out through 2030.</p><div class="av-meta"><span class="srcs"><span class="ref">GEV2026</span><span class="ref">LazardLCOE2026</span><span class="ref">IEEFA2025</span></span></div></div><div class="av-card t-forecast"><div class="av-top"><span class="av-name">Nuclear SMRs</span><span class="s-chip s-forecast">FORECAST</span></div><p class="av-thesis">Potentially transformative firm clean power, but every first unit is a first-of-a-kind; no Western SMR is yet in commercial operation.</p><div class="av-meta"><span class="fc"><span class="pct">~60%</span> <span class="by">by a US SMR delivers commercial power to the grid by end-2030 (Kairos/Oklo/TerraPower)</span></span><span class="srcs"><span class="ref">WNN2024</span><span class="ref">EnergyGrowth2025</span><span class="ref">IEA_SMR2026</span></span></div></div><div class="av-card "><div class="av-top"><span class="av-name">Offshore wind</span><span class="s-chip s-default">OPEN-CAVEATED</span></div><p class="av-thesis">Real resource, hard path — most expensive mainstream new-build and highly exposed to policy reversal.</p><div class="av-meta"><span class="srcs"><span class="ref">LazardLCOE2026</span><span class="ref">Dominion2025</span></span></div></div><div class="av-card t-open"><div class="av-top"><span class="av-name">Fusion</span><span class="s-chip s-open">OPEN-UNVERIFIED</span></div><p class="av-thesis">Physics of net energy is settled; the open questions are engineering, cost, and timeline. A 2027 proof point is worth watching; grid-relevant scale is 2030s-plus.</p><div class="av-meta"><span class="srcs"><span class="ref">CFS2026</span><span class="ref">FusionReport2026</span><span class="ref">IDTechEx2025</span></span></div></div><div class="av-card t-reported"><div class="av-top"><span class="av-name">Space-based solar power</span><span class="s-chip s-reported">REPORTED</span></div><p class="av-thesis">Proven in principle (orbit-to-ground beaming demonstrated), but full-system economics remain decades out — a long-horizon hedge, not a near-term source.</p><div class="av-meta"><span class="srcs"><span class="ref">Caltech2023</span><span class="ref">JAXA2026</span><span class="ref">SBSP2026</span></span></div></div></div>
   <div class="legend">
     <span class="item"><span class="s-chip s-est">ESTABLISHED</span> documented, cited</span>
     <span class="item"><span class="s-chip s-open">OPEN-UNVERIFIED</span> the author's open claim</span>
@@ -405,97 +399,188 @@
   </div>
 </section>
 
-<!-- ============================================================
-     AUTHOR INSTRUCTIONS (delete this comment when done):
-     This is the SURVEY-shaped self-explaining edition. The arc:
-       01 the field, and why survey it (problem as a story)
-       02 established foundations (plain prose + citations)
-       03 the avenues, one by one (each labeled in place)
-       04 what would settle the open questions
-       05 synthesis
-     Conventions:
-     - Wrap technical terms:  <button class="term" data-d="3-5 sentence plain explanation">term</button>
-     - Cite with chips:       <button class="cite" data-c="KEY">Venue 'YY</button>  (+ add KEY to CITES below)
-     - ESTABLISHED claims are asserted plainly, with citations. No box.
-     - OPEN-UNVERIFIED claims get an amber .openclaim box at the claim site.
-     - FORECAST claims get a violet .forecast box: state the estimate, the
-       reasoning, and the MANDATORY dated, falsifiable signpost.
-     - REPORTED items get a coral .reported box: name the interested-party
-       source, state plainly it is not independently reproduced, and give
-       the mundane candidate explanation with equal prominence.
-     - A genuine scientific DISPUTE is not a new status: render it as an
-       ESTABLISHED meta-claim ("the field is divided on X") citing both sides.
-     ============================================================ -->
-
 <div class="kicker teal">THE CHAPTER · NARRATIVE</div>
 <h2><span class="num">01</span>THE FIELD, AND WHY SURVEY IT</h2>
 
-<p>Open with the field as a story: what is the question everyone in this area is
-circling, why is it hard, and why is a map of the whole landscape — rather than one
-more result — the useful thing to publish right now? Introduce your first
-<button class="term" data-d="Replace this with a 3-5 sentence plain-language explanation of the term, written for a smart non-specialist. What is it, why does it matter to this field, and what is the one surprising thing about it?">tappable term</button>
-here, and your first sourced claim
-<button class="cite" data-c="ref1">Journal 'YY</button>.</p>
+<p>The United States is not short of ways to make electricity. At the end of 2024,
+roughly 2,290 GW of generation and storage sat in the nation's
+<button class="term" data-d="The line new power plants and storage projects wait in to connect to the grid. Before a project can plug in, the operator must study its impact on the network; today that study-and-upgrade process, not the cost of building the plant, is the main thing holding new capacity back.">interconnection queues</button>
+— close to twice the entire installed fleet — waiting to connect
+<button class="cite" data-c="LBNL2025">LBNL '25</button>. The binding constraints are not
+generation potential. They are connection, transmission, and, increasingly, the
+lead time on the equipment that makes power
+<button class="term" data-d="Electricity a grid can count on around the clock regardless of weather — from nuclear, gas, geothermal, or storage paired with generation — as opposed to wind and solar, whose output rises and falls with conditions.">firm</button>.</p>
 
-<p class="punch">End the opening with the one line a reader should carry into the rest of the survey.</p>
+<p>What makes this the moment to map the whole landscape is the other side of the
+ledger. After nearly two decades of flat consumption, U.S. electricity demand is
+growing again — and the growth is expected to be steep, with about half of it
+traced to data centers <button class="cite" data-c="GridStrategies2025">Grid Strategies '24</button>.
+A field where supply potential is abundant but delivery is bottlenecked, and where
+demand has just turned sharply upward, is a field where sequencing matters more than
+any single breakthrough. That is what a survey — rather than one more result — is for.</p>
+
+<p class="punch">The country is not short of ways to make power. It is short of ways
+to connect it, move it, and firm it — and, for the first time in twenty years, short of time.</p>
 
 <h2><span class="num">02</span>ESTABLISHED FOUNDATIONS</h2>
 
-<p>State plainly what the field has actually demonstrated — the bedrock every avenue
-shares. These are ESTABLISHED claims: asserted directly, each with a citation
-<button class="cite" data-c="ref2">Journal 'YY</button>. Being confident here is correct, not
-incautious; documented facts are bedrock, and timidity about them is its own kind of
-dishonesty. Save the hedging for the claims that have earned it.</p>
+<p>These are the measured facts of the present system — bedrock every avenue shares.
+They are asserted plainly, each with its source; confidence here is correct, not
+incautious. In 2025 the U.S. generation mix ran natural gas at about 41%, nuclear
+about 18%, coal about 15%, wind about 10%, solar about 7%, hydro about 5%, and other
+renewables about 2%, on a record total near 4.43 trillion kWh — up roughly 2.8% on the
+year <button class="cite" data-c="EIA2025mix">EIA '26</button>. Wind and solar together
+outproduced coal for a second consecutive year, even as power-sector CO2 rose
+about 4.4% on a coal uptick <button class="cite" data-c="Canary2026">Canary '26</button>.</p>
 
-<details class="deeper"><summary>Go deeper: NAME THE TECHNICAL LAYER</summary>
-<div class="body">Equations and formal detail live here, collapsed by default. The
-narrative above must be complete without opening this.
-<div class="eq" data-tex="E = mc^2"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi>E</mi><mo>=</mo><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E = mc^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.0576em;">E</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8641em;"></span><span class="mord mathnormal">m</span><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></span></div></div>
-</details>
+<p>On the demand side, Grid Strategies forecasts that U.S. peak load is expected to grow
+by roughly 166 GW by 2030, with about 90 GW of that from data centers
+<button class="cite" data-c="GridStrategies2025">Grid Strategies '24</button>. That figure is
+a labeled projection, not a measured fact — its verifier is how the next few years
+actually resolve — but it is the best-documented estimate of the demand turn, and the
+direction is not in dispute.</p>
+
+<p>The connection bottleneck is documented, not anecdotal: about 2,290 GW of capacity
+was active in interconnection queues at end-2024, against a historical completion rate
+near 14% and median waits around 55 months; a record ~112 GW of solar-plus-storage
+withdrew from the queues in 2024 alone <button class="cite" data-c="LBNL2025">LBNL '25</button>.
+On cost, renewables are the cheapest new-build on an unsubsidized
+<button class="term" data-d="The all-in cost of generating a unit of electricity over a plant's lifetime, in dollars per megawatt-hour, used to compare technologies on a common footing. It omits grid-integration and reliability value, so it is a starting point for comparison, not the whole story.">levelized-cost</button>
+basis — utility solar about $40–98/MWh and onshore wind about $37–99/MWh, versus gas
+CCGT around $51–129 and nuclear around $175–255 — but costs are rising across every
+technology <button class="cite" data-c="LazardLCOE2026">Lazard '26</button>.</p>
+
+<p>Finally, the firm-power equipment squeeze is real and quantified: large-frame gas
+turbines are effectively sold out toward 2030, lead times have stretched to five to
+seven years, and equipment prices have climbed roughly 300% in three years
+<button class="cite" data-c="GEV2026">GE Vernova '26</button>
+<button class="cite" data-c="IEEFA2025">IEEFA '25</button>. The bridge fuel is now itself
+a queue.</p>
 
 <h2><span class="num">03</span>THE AVENUES</h2>
 
-<p>The heart of the survey: walk each avenue in turn, and label each exactly as
-strongly as its evidence allows. The four conventions below show every status home.</p>
+<p>Each avenue is walked in turn and labeled exactly as strongly as its evidence
+allows: what it costs, how fast it can launch, and — where the avenue is a forward
+bet — the dated, falsifiable signpost that will later mark it right or wrong.</p>
 
-<h3>Avenue A — a mature, documented direction</h3>
-<p>Describe it in plain language and assert what is established about it, with sources
-<button class="cite" data-c="ref1">Journal 'YY</button>. No callout box — established prose carries itself.</p>
+<h3>Grid-enhancing tech &amp; reconductoring — Tier 1, established</h3>
+<p><button class="term" data-d="Hardware and software — dynamic line ratings, power-flow controllers, and advanced reconductoring with high-capacity conductors — that squeeze more usable capacity out of transmission lines already in the ground, cheaply and quickly, instead of building new lines.">Grid-enhancing technologies</button>
+and advanced reconductoring unlock large capacity on existing rights-of-way in months,
+not years, at a fraction of new-line cost <button class="cite" data-c="CGEP2026">Columbia CGEP '26</button>.
+This is the cheapest, fastest fix for the constraint that actually binds, and it is
+under-deployed for incentive and regulatory reasons, not technical ones — which is why
+it is asserted as established while its scale-up is tracked by a signpost: we expect
+≥50 GW of incremental US grid capacity unlocked via GETs/advanced transmission tech by
+end-2028.</p>
 
-<h3>Avenue B — a direction with a central open question</h3>
-<p>Lay out the avenue, then mark the open question honestly, right where it arises:</p>
-<div class="openclaim">
-<span class="tag">OPEN-UNVERIFIED</span><b>Honest label:</b> DESCRIBE THE UNVERIFIED CLAIM. State that it is claim <span class="mono">CNN</span> in the public ledger and an open challenge: <b>the first person to confirm or refute it gets named credit in the next version.</b>
-</div>
+<h3>Solar + storage (utility-scale) — Tier 1, established</h3>
+<p>Utility-scale solar paired with batteries is the cheapest and quickest-to-deploy new
+generation, and storage steadily converts it toward firm delivery
+<button class="cite" data-c="EIASTEO2026">EIA STEO '26</button>. The constraint is
+interconnection, not cost. The near-term marker we watch: a combined solar+wind share of
+US generation of ≥21% by end-2027.</p>
 
-<h3>Avenue C — a direction you are making a forward bet on</h3>
-<p>Where you offer a judgment about how an avenue will develop, label it as a forecast —
-never smuggle an estimate in as a fact:</p>
+<h3>Enhanced geothermal (EGS) — Tier 2, forward bet</h3>
+<p><button class="term" data-d="A way to make geothermal power almost anywhere by drilling deep and engineering a reservoir in hot dry rock, then circulating water through it — borrowing the horizontal-drilling and fracturing techniques the shale oil-and-gas industry perfected.">Enhanced geothermal</button>
+would deliver firm, clean, 24/7 power from engineered hot-rock reservoirs, and the first
+commercial-scale plant is arriving now on a steep cost-down curve
+<button class="cite" data-c="WoodMac2026">Wood Mackenzie '26</button>. Because grid-scale
+delivery is not yet demonstrated, it is labeled a forecast, not a fact:</p>
 <div class="forecast">
-<span class="tag">FORECAST</span><b>Labeled estimate:</b> STATE THE ESTIMATE (e.g. ~35%) AND THE REASONING BEHIND IT. <b>Signpost:</b> name the dated, falsifiable event that will later mark this right or wrong (e.g. "by 2030, X is demonstrated at scale Y"). A forecast without a dated signpost is just an opinion with a number on it; the signpost is its verifier.
+<span class="tag">FORECAST</span><b>Labeled estimate:</b> ~80% — the drilling technique is proven and a lead developer is already building; the risk is schedule and reservoir performance at scale, not physics. <b>Signpost:</b> Fervo Cape Station Phase 1 (100 MW) delivering to grid by end-2026; 500 MW by end-2028.
 </div>
 
-<h3>Avenue D — a direction sourced only to an interested party</h3>
-<p>Some avenues live mostly on vendor roadmaps, press-release figures, or claims that
-have not been independently reproduced. Record them — but mark the provenance plainly:</p>
+<h3>Nuclear restarts &amp; uprates — Tier 1, established</h3>
+<p>Restarting or uprating existing reactors is the fastest firm CLEAN megawatt available
+today <button class="cite" data-c="WNN2024">World Nuclear News '24</button>. The avenue is
+established but capped to a handful of restartable sites, so it is a scalpel, not a
+lever. Its nearest concrete marker: the Crane Clean Energy Center (TMI Unit 1, 837 MW) is
+expected to return to commercial operation by 2028.</p>
+
+<h3>Onshore wind — Tier 2, established</h3>
+<p>Onshore wind remains among the cheapest new-build, but siting and permitting headwinds
+plus a sharp levelized-cost rise are slowing additions
+<button class="cite" data-c="EIASTEO2026">EIA STEO '26</button>. It stays a workhorse rather
+than a growth engine; the marker we watch is simply that net US onshore wind additions
+remain positive through 2027.</p>
+
+<h3>Natural gas CCGT — Tier 2, established</h3>
+<p>Combined-cycle gas is the incumbent firm bridge — indispensable near-term, but not
+clean, and now equipment-constrained: large-frame turbines are effectively sold out
+through 2030 <button class="cite" data-c="GEV2026">GE Vernova '26</button>
+<button class="cite" data-c="IEEFA2025">IEEFA '25</button>. The binding marker here is a
+constraint, not a hope: new-build CCGT turbine lead times are expected to remain ≥4 years
+through 2028.</p>
+
+<h3>Nuclear SMRs — Tier 3, forward bet</h3>
+<p>Small modular reactors would be potentially transformative firm clean power, but every
+first unit is a
+<button class="term" data-d="The first full-scale unit of a new design, which carries cost and schedule risk that later copies do not — because licensing, supply chain, and construction learning are all being done for the first time.">first-of-a-kind</button>,
+and no Western SMR is yet in commercial operation
+<button class="cite" data-c="IEA_SMR2026">IEA '26</button>. This is a forward bet, labeled as one:</p>
+<div class="forecast">
+<span class="tag">FORECAST</span><b>Labeled estimate:</b> ~60% — multiple credible US programs are advancing, but first-of-a-kind cost and schedule risk is high and unproven at grid scale. <b>Signpost:</b> a US SMR delivers commercial power to the grid by end-2030 (Kairos/Oklo/TerraPower).
+</div>
+
+<h3>Offshore wind — Tier 4, open-caveated</h3>
+<p>Offshore wind is a real resource on a hard path: the most expensive mainstream
+new-build and highly exposed to policy reversal
+<button class="cite" data-c="LazardLCOE2026">Lazard '26</button>. It is established that the
+resource and the engineering work; what is <b>OPEN-CAVEATED</b> is whether the current
+US pipeline reaches operation on schedule under present policy — defensible as a
+directional expectation (~45%), not a firm prediction. The concrete test is whether
+Coastal Virginia Offshore Wind (~2.6 GW) reaches full commercial operation on its stated
+schedule <button class="cite" data-c="Dominion2025">Dominion '25</button>.</p>
+
+<h3>Fusion — Tier 4, open question</h3>
+<p>Fusion's net-energy physics is settled; the open questions are engineering, cost, and
+timeline, and grid-relevant scale is 2030s-plus
+<button class="cite" data-c="FusionReport2026">FIA '26</button>. A near-term proof point is
+worth watching, and we mark it honestly as an open, unverified claim:</p>
+<div class="openclaim">
+<span class="tag">OPEN-UNVERIFIED</span><b>Honest label:</b> whether a private device demonstrates net energy gain on its stated near-term schedule is unverified. This is claim <span class="mono">C15</span> in the public ledger and an open challenge — the first person to confirm or refute it gets named credit in the next version. <b>Signpost:</b> CFS SPARC demonstrates net energy gain (Q&gt;1) by end-2027.
+</div>
+
+<h3>Space-based solar power — long-horizon, reported</h3>
+<p>Orbit-to-ground power beaming has been demonstrated in principle, but full-system
+economics remain decades out. It belongs in the survey as a long-horizon hedge, recorded
+with its provenance marked plainly:</p>
 <div class="reported">
-<span class="tag">REPORTED</span><b>Non-independent source:</b> NAME THE INTERESTED-PARTY SOURCE and state plainly it is not independently reproduced. Give the mundane candidate explanation with at least equal prominence (or state that none has been identified). This is recorded for completeness; it is NOT the author's claim, and it gets no vote on any other claim's status.
+<span class="tag">REPORTED</span><b>Non-independent source:</b> the case rests largely on agency and industry roadmaps (e.g. JAXA and space-solar programs), alongside the Caltech SSPD-1 experiment, which detectably beamed power to Earth as a proof of concept <button class="cite" data-c="Caltech2023">Caltech '23</button>. The mundane counterpoint, given equal prominence: launch mass, in-orbit assembly, and beaming efficiency put grid-relevant, revenue-generating delivery decades — not years — away, and no independent techno-economic analysis places it inside this decade. It is recorded for completeness; it is NOT the author's claim and gets no vote on any other claim's status.
 </div>
 
 <h2><span class="num">04</span>WHAT WOULD SETTLE THE OPEN QUESTIONS</h2>
 
-<p>For each open avenue, spell out the specific result, measurement, or signpost that
-would move it from open to established. This is what turns a survey from a snapshot into
-an instrument: a reader knows exactly what work is worth doing next, and your OPEN claims
-become standing invitations with named credit attached.</p>
+<p>Gathered in one place, the signposts turn this survey from a snapshot into an
+instrument — each names the dated event that would move an avenue from open to settled.
+Enhanced geothermal: Fervo Cape Station delivering 100 MW to the grid by end-2026, and
+500 MW by end-2028. Nuclear SMRs: the first US small modular reactor delivering commercial
+power to the grid by end-2030. Fusion: CFS SPARC demonstrating net energy gain (Q&gt;1) by
+end-2027. Natural gas: any easing of turbine lead times back below four years — the sign
+the firm-equipment squeeze is breaking. And grid-enhancing tech: gigawatts of capacity
+demonstrably unlocked on existing rights-of-way, on the way to ≥50 GW by end-2028. Each is
+falsifiable, dated, and public.</p>
 
 <h2><span class="num">05</span>SYNTHESIS</h2>
 
-<p>Pull the landscape together: which avenues are solid, which are live bets, which are
-mostly noise, and what the honest shape of the field is once every claim wears its true
-label. Close on the line you want to leave the reader with.</p>
+<p>Read against a single criterion — the fastest clean, firm, scalable megawatts per
+dollar, weighted toward clearing the bottleneck that actually binds — the landscape falls
+into a loose ordering. Tier 1 is the near-term workhorses: grid-enhancing tech and
+reconductoring, solar-plus-storage, and nuclear restarts. Tier 2 is the solid supporting
+cast: enhanced geothermal, onshore wind, and gas CCGT. Tier 3 is the high-value forward
+bet, SMRs. Tier 4 is the long-horizon and unproven: offshore wind, fusion, and
+space-based solar.</p>
 
-<p class="punch">End with the line your readers should carry away.</p>
+<p>This ranking is a sequencing lens, not a claim about which technology wins. Change the
+criterion and the order moves: weight for deep decarbonization and firm nuclear climbs;
+weight for energy security and domestic gas holds Tier 1; weight for cost alone and solar
+stands nearly by itself. The counter-view deserves equal prominence — a reader who
+believes transmission reform will stall, or that data-center demand is overstated, would
+reasonably down-rank the whole premise that speed-to-connect is the master variable. The
+ordering is offered as a way to think about order-of-operations, not as a verdict, which
+is why it sits in the ledger as an open, caveated argument rather than a finding.</p>
+
+<p class="punch">Don't trust this paper — run it.</p>
 
 <div class="publish-cta">
   <div class="pc-text">
@@ -507,15 +592,28 @@ label. Close on the line you want to leave the reader with.</p>
 
 <footer>
   <b>About this edition:</b> this page is the complete survey in self-explaining form — the avenue <a href="#landscape">landscape</a> and the consistency console up top, the narrative below. This live edition is the paper. The <a href="dossier.html">audit trail</a> carries the citation audit and the receipts.
-  <br><br><span class="mono">An Open Dossier · CC BY 4.0 · AI-assistance: @@AI-USE NOTE@@ and state your actual review basis · every verification label is true</span>
+  <br><br><span class="mono">An Open Dossier · CC BY 4.0 · AI-assistance: drafting, typesetting, citation formatting, and consistency-checking; the author reviews by consistency and reality checks on end results, not re-derivation · every verification label is true</span>
 </footer>
 
 </div>
 
-<!-- cite fields. who: "Author et al. (Year)". what: 1-2 sentence plain-language summary of what it showed + why it matters. src: "Journal Vol, Page (Year), DOI/arXiv". Re-state fresh per chapter; never back-reference. -->
+<!-- cite fields. who: "Author/Org (Year)". what: 1-2 sentence plain-language summary of what it showed + why it matters. src: "Venue / report (Year), resolvable id or URL". Re-stated fresh per chapter; never back-reference. -->
 <script type="application/json" id="cites-data">
-{ "ref1": { "who": "@@CITE-WHO@@", "what": "@@CITE-WHAT@@", "src": "@@CITE-SRC@@" },
-  "ref2": { "who": "@@CITE-WHO@@", "what": "@@CITE-WHAT@@", "src": "@@CITE-SRC@@" } }
+{ "EIA2025mix": { "who": "U.S. Energy Information Administration (2026)", "what": "Electricity data establishing the measured 2025 US generation mix and a record annual total near 4.43 trillion kWh — the present-state fuel shares this survey builds on.", "src": "EIA, Electric Power Monthly / Electricity data (2026), eia.gov/electricity" },
+  "Canary2026": { "who": "Canary Media (2026)", "what": "Reporting that US wind+solar outproduced coal for a second straight year in 2025 while power-sector CO2 ticked up ~4.4% on coal, contextualizing the mix shift.", "src": "Canary Media (2026), canarymedia.com" },
+  "GridStrategies2025": { "who": "Wilson, J. D. & Zimmerman, Z. — Grid Strategies LLC (2024)", "what": "Strategic Industries Surging: forecasts ~166 GW of US peak-load growth by 2030, roughly 90 GW from data centers — the best-documented estimate of the demand turn.", "src": "Grid Strategies LLC, Dec 2024, gridstrategiesllc.com" },
+  "LBNL2025": { "who": "Rand, J., Seel, J. et al. — Lawrence Berkeley National Laboratory (2025)", "what": "Queued Up: ~2,290 GW of generation+storage in US interconnection queues at end-2024 (~2x the installed fleet), ~14% historical completion, ~55-month median waits.", "src": "LBNL, Queued Up (2025), emp.lbl.gov/queues" },
+  "LazardLCOE2026": { "who": "Lazard (2026)", "what": "Levelized Cost of Energy+: unsubsidized LCOE ranges placing utility solar and onshore wind as cheapest new-build vs gas CCGT and nuclear, with costs rising across the board.", "src": "Lazard, Levelized Cost of Energy+ (2026), lazard.com" },
+  "GEV2026": { "who": "GE Vernova (2026)", "what": "Disclosures on large-frame gas-turbine backlog and lead times — order slots effectively reserved toward 2030 as demand for firm capacity surges.", "src": "GE Vernova investor disclosures (2026), gevernova.com" },
+  "IEEFA2025": { "who": "Institute for Energy Economics and Financial Analysis (2025)", "what": "Analysis of gas-turbine market tightness: five-to-seven-year lead times and roughly 300% price escalation for new-build CCGT equipment over three years.", "src": "IEEFA (2025), ieefa.org" },
+  "CGEP2026": { "who": "Columbia University Center on Global Energy Policy (2026)", "what": "Analysis of grid-enhancing technologies and advanced reconductoring as fast, low-cost capacity on existing rights-of-way, under-deployed for incentive/regulatory reasons rather than technical ones.", "src": "Columbia CGEP (2026), energypolicy.columbia.edu" },
+  "EIASTEO2026": { "who": "U.S. Energy Information Administration (2026)", "what": "Short-Term Energy Outlook: near-term projections for the combined solar+wind share of US generation and for renewable capacity additions.", "src": "EIA, Short-Term Energy Outlook (2026), eia.gov/outlooks/steo" },
+  "WoodMac2026": { "who": "Wood Mackenzie (2026)", "what": "Market analysis of enhanced-geothermal cost trajectories and deployment outlook as the first commercial-scale plants come online.", "src": "Wood Mackenzie (2026), woodmac.com" },
+  "WNN2024": { "who": "World Nuclear News (2024)", "what": "Reporting on US reactor restarts and uprates, including the Crane Clean Energy Center (Three Mile Island Unit 1) restart plan and schedule.", "src": "World Nuclear News (2024), world-nuclear-news.org" },
+  "IEA_SMR2026": { "who": "International Energy Agency (2026)", "what": "Assessment of small modular reactor economics and timelines, underscoring first-of-a-kind risk and that no Western SMR is yet in commercial operation.", "src": "IEA, nuclear / SMR outlook (2026), iea.org" },
+  "Dominion2025": { "who": "Dominion Energy (2025)", "what": "Project filings and construction updates for Coastal Virginia Offshore Wind (~2.6 GW), the largest US offshore wind project under construction, and its stated schedule.", "src": "Dominion Energy, CVOW disclosures (2025), coastalvawind.com" },
+  "FusionReport2026": { "who": "Fusion Industry Association (2026)", "what": "Annual survey of private fusion developers — capital raised, milestones, and stated net-energy and pilot-plant timelines — the landscape against which SPARC's signpost sits.", "src": "Fusion Industry Association, The Global Fusion Industry (2026), fusionindustryassociation.org" },
+  "Caltech2023": { "who": "California Institute of Technology, Space Solar Power Project (2023)", "what": "The MAPLE experiment aboard SSPD-1 demonstrated wireless power transfer in orbit and detectably beamed power to Earth — proof of principle, not system economics.", "src": "Caltech Space Solar Power Project (2023), spacesolar.caltech.edu" } }
 </script>
 <script>
 // citation database — add an entry per chip:
