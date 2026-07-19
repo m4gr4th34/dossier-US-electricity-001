@@ -181,5 +181,55 @@ console.log("\ncostspeed label placement (no overlaps):");
   check("synthetic co-located cluster: " + B.length + " labels, none intersect" + (hitB ? " [" + hitB + "]" : ""), B.length === 6 && !hitB);
 })();
 
+// --- 8) wastedecay geometry + label placement --------------------------------
+// The decay-timeline scatter draws a log axis + two bars + reference marks; this
+// asserts (a) decade ticks are equidistant on the log axis, (b) each bar ends at
+// the right x (bar1 at the axis right, bar2 at ~xp(500)), and (c) no two label
+// boxes intersect. Checks the REAL manuscript figure (read from the edition source)
+// plus a synthetic spec, so both are guarded.
+console.log("\nwastedecay geometry + labels:");
+(function () {
+  var fs = require("fs"), path = require("path");
+  if (!global.window) global.window = {};
+  if (!global.window.DossierFigures) global.window.DossierFigures = F;
+  require("./wastedecay.js");
+  if (typeof F.renderWasteDecayLayout !== "function") { check("wastedecay exposes renderWasteDecayLayout", false); return; }
+  function firstHit(boxes, mg) {
+    for (var i = 0; i < boxes.length; i++) for (var j = i + 1; j < boxes.length; j++) {
+      var a = boxes[i], b = boxes[j];
+      if (!(a.r + mg < b.l || a.l - mg > b.r || a.b + mg < b.t || a.t - mg > b.b)) return i + "×" + j;
+    }
+    return null;
+  }
+  function assertLayout(tag, spec) {
+    var L = F.renderWasteDecayLayout(spec);
+    if (!L) { check(tag + ": layout computed", false); return; }
+    // (a) equidistant decade ticks
+    var equi = true; if (L.tickXs.length > 2) { var d0 = L.tickXs[1] - L.tickXs[0];
+      for (var i = 2; i < L.tickXs.length; i++) if (Math.abs((L.tickXs[i] - L.tickXs[i - 1]) - d0) > 0.01) equi = false; }
+    check(tag + ": " + L.tickXs.length + " decade ticks equidistant on the log axis", L.tickXs.length >= 2 && equi);
+    // (b) bar ends: bar1 reaches the axis right; bar2 lands left of it (the closed cycle is shorter)
+    check(tag + ": bar1 runs to the axis right, bar2 ends well short of it",
+      L.barEnds.length === 2 && Math.abs(L.barEnds[0] - L.xpEnd) < 0.5 && L.barEnds[1] < L.barEnds[0] - 100);
+    // (c) no label overlaps
+    var hit = firstHit(L.labelBoxes, 0);
+    check(tag + ": " + L.labelBoxes.length + " label boxes, none intersect" + (hit ? " [" + hit + "]" : ""), L.labelBoxes.length > 0 && !hit);
+  }
+  var spec = null;
+  try {
+    var src = fs.readFileSync(path.join(__dirname, "..", "editions", "index.source.html"), "utf8");
+    var m = src.match(/data-figure='(\{"type":"wastedecay"[\s\S]*?)'>/);
+    if (m) spec = JSON.parse(m[1].replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
+  } catch (e) { /* not reachable -> synthetic only */ }
+  if (spec) assertLayout("manuscript wastedecay", spec);
+  else console.log("  (edition source not reachable here — running synthetic only)");
+  assertLayout("synthetic wastedecay", {
+    type: "wastedecay", axis: { min: 10, max: 100000 },
+    bars: [{ label: "Conventional spent fuel (transuranics kept)", end: 100000, endText: "≈100,000 yr", color: "#c0553f" },
+           { label: "Fast-reactor closed cycle (transuranics burned)", end: 300, endRange: 500, endText: "≈300–500 yr", color: "#1f8a70" }],
+    marks: [{ at: 5000, label: "all recorded history ~5,000 yr" }, { at: 900, label: "oldest standing cathedrals ~900 yr" }]
+  });
+})();
+
 console.log("\n" + (fails ? fails + " FAILURE(S)" : "all primitives passed") + ".");
 process.exit(fails ? 1 : 0);
