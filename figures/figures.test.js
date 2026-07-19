@@ -137,5 +137,49 @@ console.log("\nno raw font-size in modules (tier-class gate):");
   }
 })();
 
+// --- 7) costspeed label placement: no two marker-label boxes intersect ---------
+// The scatter auto-places its labels via a greedy bbox collision pass; this asserts
+// the pass actually produced a non-overlapping layout (verified, not eyeballed).
+// Loads costspeed.js against the runtime API (a window shim), then checks the placed
+// label boxes for the REAL manuscript figure (read from the edition source) plus a
+// synthetic co-located cluster that stresses the placer the way the real data does.
+console.log("\ncostspeed label placement (no overlaps):");
+(function () {
+  var fs = require("fs"), path = require("path");
+  if (!global.window) global.window = {};
+  if (!global.window.DossierFigures) global.window.DossierFigures = F;
+  require("./costspeed.js");
+  if (typeof F.renderCostSpeedLabelBoxes !== "function") { check("costspeed exposes renderCostSpeedLabelBoxes", false); return; }
+  function firstHit(boxes, mg) {
+    for (var i = 0; i < boxes.length; i++) for (var j = i + 1; j < boxes.length; j++) {
+      var a = boxes[i], b = boxes[j];
+      if (!(a.r + mg < b.l || a.l - mg > b.r || a.b + mg < b.t || a.t - mg > b.b)) return i + "×" + j;
+    }
+    return null;
+  }
+  // (a) the real manuscript figure, if the edition source is reachable from here
+  var spec = null;
+  try {
+    var src = fs.readFileSync(path.join(__dirname, "..", "editions", "index.source.html"), "utf8");
+    var m = src.match(/data-figure='(\{"type":"costspeed"[\s\S]*?)'>/);
+    if (m) spec = JSON.parse(m[1].replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
+  } catch (e) { /* not reachable in this context -> synthetic only */ }
+  if (spec) {
+    var A = F.renderCostSpeedLabelBoxes(spec), hitA = firstHit(A, 2);
+    check("manuscript costspeed: " + A.length + " labels, none intersect (2px clearance)" + (hitA ? " [" + hitA + "]" : ""), A.length > 0 && !hitA);
+  } else {
+    console.log("  (edition source not reachable here — running synthetic only)");
+  }
+  // (b) synthetic co-located clusters (two overlapping pairs, mirroring the real
+  //     EGS/onshore and SMR/offshore collisions) — the placer must separate them.
+  var dense = { type: "costspeed", x: { max: 13 }, y: { max: 180 }, cats: { a: "#0c8f86" }, points: [
+    { name: "Alpha option", yr: 2.5, cost: 70, cat: "a" }, { name: "Beta option", yr: 2.5, cost: 65, cat: "a" },
+    { name: "Gamma option", yr: 6, cost: 105, cat: "a" }, { name: "Delta option", yr: 6, cost: 130, cat: "a" },
+    { name: "Epsilon edge", yr: 1, cost: 25, cat: "a" }, { name: "Zeta option", yr: 9, cost: 90, cat: "a" }
+  ] };
+  var B = F.renderCostSpeedLabelBoxes(dense), hitB = firstHit(B, 0);
+  check("synthetic co-located cluster: " + B.length + " labels, none intersect" + (hitB ? " [" + hitB + "]" : ""), B.length === 6 && !hitB);
+})();
+
 console.log("\n" + (fails ? fails + " FAILURE(S)" : "all primitives passed") + ".");
 process.exit(fails ? 1 : 0);

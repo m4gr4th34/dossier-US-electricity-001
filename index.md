@@ -57,35 +57,53 @@ Finally, the firm-power equipment squeeze is real and quantified: large-frame ga
 
 ## 03 THE AVENUES
 
-Each avenue is walked in turn and labeled exactly as strongly as its evidence allows: what it costs, how fast it can launch, and — where the avenue is a forward bet — the dated, falsifiable signpost that will later mark it right or wrong.
+The avenues read best as a chain of questions: each act opens with the question the last one raised and closes with the one the next must answer. Four acts, working outward from the wires to the frontier — and every avenue keeps its honest status label as it passes.
+
+**ACT I · DEMAND IS BACK — CAN THE GRID SERVE IT?**
+
+Demand has turned up after twenty flat years (§01–§02). The first question is the blunt one: can the grid physically serve it? The honest near-term answer is no — and the proof is that the grid is already throwing energy away. In 2024, roughly 20 million MWh of US wind and solar output was curtailed (Deliberately not producing available wind or solar power — ordering plants to throttle back — usually because the transmission lines out of a region are full, or because supply momentarily exceeds local demand. The energy is simply lost, not stored.) — deliberately not produced, largely because the transmission out of the windy and sunny regions was full [Amperon '26]. Four of the seven ISOs set curtailment records that year, and ERCOT alone curtailed more than 8 TWh [Modo Energy '25]. That 20-million-MWh national figure is an industry-analysis aggregate, recorded here as attributed; one clean primary-source slice sits underneath it — CAISO curtailed 3.4 million MWh of wind and solar in 2024, up 29% year over year, with congestion a primary driver [EIA TiE '25].
+
+This reframes what new wires are for. New transmission capacity does not have to wait on new generation; it fills in sequence — claim `C22` in the ledger, an open argument. First, the currently-curtailed generation already spinning flows the moment the constraint lifts. Second, the queue projects whose only binding constraint was connection can finally plug in. Third, and only third, genuinely new build. Reconductoring, in this light, is the cork on generation that already exists. **Counter-view, equal prominence:** curtailment is concentrated in specific regions — West Texas, California — so reconductoring somewhere else does not tap it; some curtailment is oversupply rather than congestion, which more wires alone do not fix; and storage competes with wires as the cheaper cure for part of it. The argument is directional, not a guarantee.
 
 ### Grid-enhancing tech & reconductoring — Tier 1, established
 
-Grid-enhancing technologies (Hardware and software — dynamic line ratings, power-flow controllers, and advanced reconductoring with high-capacity conductors — that squeeze more usable capacity out of transmission lines already in the ground, cheaply and quickly, instead of building new lines.) and advanced reconductoring unlock large capacity on existing rights-of-way in months, not years, at a fraction of new-line cost [Columbia CGEP '26]. This is the cheapest, fastest fix for the constraint that actually binds, and it is under-deployed for incentive and regulatory reasons, not technical ones — which is why it is asserted as established while its scale-up is tracked by a signpost: we expect ≥50 GW of incremental US grid capacity unlocked via GETs/advanced transmission tech by end-2028.
+Grid-enhancing technologies (Hardware and software — dynamic line ratings, power-flow controllers, and advanced reconductoring with high-capacity conductors — that squeeze more usable capacity out of transmission lines already in the ground, cheaply and quickly, instead of building new lines.) and advanced reconductoring unlock large capacity on existing rights-of-way in months, not years, at a fraction of new-line cost [Columbia CGEP '26]. This is the cheapest, fastest fix for the constraint that actually binds, and it is under-deployed for incentive and regulatory reasons, not technical ones — which is why it is asserted as established while its scale-up is tracked by a signpost: we expect ≥50 GW of incremental US grid capacity unlocked via GETs/advanced transmission tech by end-2028. Crucially, the capacity it frees does double duty — it uncorks the curtailed generation already spinning today *and* lets the connection-blocked queue plug in, value delivered before a single new plant is built.
 
 *(figure: Reconductoring: the same towers carry 2–3× the power — Reconductoring adds capacity on existing rights-of-way in roughly 1–2 years, about 30–40% cheaper than new lines, with no new land or permitting — e.g. Salt River Project gained an ~80% capacity increase on a Phoenix line without replacing a single 1970s-era tower.)*
+
+So the freed capacity fills first with what already exists. But the queue waiting behind it is overwhelmingly variable — solar, wind, and storage. Can variable power carry the growth?
+
+**ACT II · CAN SOLAR AND WIND KEEP UP?**
+
+Split the question in two, because the honest answer differs by axis. On *energy* — total megawatt-hours over a year — the answer is yes: solar and wind are the fastest, cheapest new generation and already supply the bulk of additions. On *shape* — delivering firm, around-the-clock power to an always-on AI load — the answer is no: batteries move sunlight a few hours, not across days or seasons.
 
 ### Solar + storage (utility-scale) — Tier 1, established
 
 Utility-scale solar paired with batteries is the cheapest and quickest-to-deploy new generation, and storage steadily converts it toward firm delivery [EIA STEO '26]. The constraint is interconnection, not cost. The near-term marker we watch: a combined solar+wind share of US generation of ≥21% by end-2027.
 
-### Enhanced geothermal (EGS) — Tier 2, forward bet
+### Onshore wind — Tier 2, established
 
-Enhanced geothermal (A way to make geothermal power almost anywhere by drilling deep and engineering a reservoir in hot dry rock, then circulating water through it — borrowing the horizontal-drilling and fracturing techniques the shale oil-and-gas industry perfected.) would deliver firm, clean, 24/7 power from engineered hot-rock reservoirs, and the first commercial-scale plant is arriving now on a steep cost-down curve [Wood Mackenzie '26]. Because grid-scale delivery is not yet demonstrated, it is labeled a forecast, not a fact:
+Onshore wind remains among the cheapest new-build, but siting and permitting headwinds plus a sharp levelized-cost rise are slowing additions [EIA STEO '26]. It stays a workhorse rather than a growth engine; the marker we watch is simply that net US onshore wind additions remain positive through 2027.
 
-> **FORECAST** — **Labeled estimate:** ~80% — the drilling technique is proven and a lead developer is already building; the risk is schedule and reservoir performance at scale, not physics. **Signpost:** Fervo Cape Station Phase 1 (100 MW) delivering to grid by end-2026; 500 MW by end-2028.
+On energy they keep up and then some; on shape they cannot, and no battery yet bridges a windless week in January. So what runs at 3 a.m. in January?
+
+**ACT III · THE FIRM-POWER PROBLEM**
+
+What runs at 3 a.m. in January is *firm* power, and it is the growth's hardest problem. Four candidates answer it, in ascending order of how far off they are: the incumbent bridge, the fastest clean megawatts, the emerging clean-firm workhorse, and the high-value bet.
+
+### Natural gas CCGT — Tier 2, established
+
+Combined-cycle gas is the incumbent firm bridge — indispensable near-term, but not clean, and now equipment-constrained: large-frame turbines are effectively sold out through 2030 [GE Vernova '26] [IEEFA '25]. The binding marker here is a constraint, not a hope: new-build CCGT turbine lead times are expected to remain ≥4 years through 2028. That sold-out order book is the trap — the obvious answer is the one you cannot buy in time.
 
 ### Nuclear restarts & uprates — Tier 1, established
 
 Restarting or uprating existing reactors is the fastest firm CLEAN megawatt available today [World Nuclear News '24]. The avenue is established but capped to a handful of restartable sites, so it is a scalpel, not a lever. Its nearest concrete marker: the Crane Clean Energy Center (TMI Unit 1, 837 MW) is expected to return to commercial operation by 2028.
 
-### Onshore wind — Tier 2, established
+### Enhanced geothermal (EGS) — Tier 2, forward bet
 
-Onshore wind remains among the cheapest new-build, but siting and permitting headwinds plus a sharp levelized-cost rise are slowing additions [EIA STEO '26]. It stays a workhorse rather than a growth engine; the marker we watch is simply that net US onshore wind additions remain positive through 2027.
+Enhanced geothermal (A way to make geothermal power almost anywhere by drilling deep and engineering a reservoir in hot dry rock, then circulating water through it — borrowing the horizontal-drilling and fracturing techniques the shale oil-and-gas industry perfected.) would deliver firm, clean, 24/7 power from engineered hot-rock reservoirs, and the first commercial-scale plant is arriving now on a steep cost-down curve [Wood Mackenzie '26]. Because grid-scale delivery is not yet demonstrated, it is labeled a forecast, not a fact — but it is the clean-firm workhorse the shape problem most needs:
 
-### Natural gas CCGT — Tier 2, established
-
-Combined-cycle gas is the incumbent firm bridge — indispensable near-term, but not clean, and now equipment-constrained: large-frame turbines are effectively sold out through 2030 [GE Vernova '26] [IEEFA '25]. The binding marker here is a constraint, not a hope: new-build CCGT turbine lead times are expected to remain ≥4 years through 2028.
+> **FORECAST** — **Labeled estimate:** ~80% — the drilling technique is proven and a lead developer is already building; the risk is schedule and reservoir performance at scale, not physics. **Signpost:** Fervo Cape Station Phase 1 (100 MW) delivering to grid by end-2026; 500 MW by end-2028.
 
 ### Nuclear SMRs — Tier 3, forward bet
 
@@ -93,9 +111,15 @@ Small modular reactors would be potentially transformative firm clean power, but
 
 > **FORECAST** — **Labeled estimate:** ~60% — multiple credible US programs are advancing, but first-of-a-kind cost and schedule risk is high and unproven at grid scale. **Signpost:** a US SMR delivers commercial power to the grid by end-2030 (Kairos/Oklo/TerraPower).
 
-One further, longer-range reason some of these designs matter is the waste problem. A reactor's most stubborn hazard is not uranium itself but the *transuranics* — plutonium, americium, and their kin — created in fission, whose radiotoxicity is what stretches the dangerous lifetime of spent fuel toward hundreds of thousands of years. Certain advanced designs are built to burn exactly those:
+One further, longer-range reason some of these designs matter is the waste problem — the forward payoff hiding inside the SMR bet. A reactor's most stubborn hazard is not uranium itself but the *transuranics* — plutonium, americium, and their kin — created in fission, whose radiotoxicity is what stretches the dangerous lifetime of spent fuel toward hundreds of thousands of years. Certain advanced designs are built to burn exactly those:
 
 > **FORECAST** — **Labeled estimate:** fast-spectrum reactors and certain molten-salt reactors (MSRs) are expected to shrink the long-lived-waste burden by consuming transuranics as fuel, potentially compressing the dangerous lifetime of the residual waste from ~hundreds of thousands of years toward centuries. Two clarifications keep this precise: the long-life problem is the transuranics, not the uranium; and MSRs' nearer-term advantages are operational — atmospheric-pressure operation and walk-away safety — rather than waste. **Counter-view, equal prominence:** none of this is proven at commercial scale, and the reprocessing and fast-burn fuel cycles it would rely on carry their own cost and proliferation considerations. Tie-in worth noting: Kairos, a leading US effort, is a fluoride-salt-cooled design. This is claim `C19` in the ledger. **Signpost:** a US advanced/fast-spectrum or molten-salt reactor demonstrates commercial-scale operation with materially reduced long-lived-waste output by 2035.
+
+Each of these firm-clean answers is either capped, unbuilt, or first-of-a-kind. And if none of them scales in time — what are the long-shots?
+
+**ACT IV · THE FRONTIER BETS**
+
+The long-shots are the frontier bets: real physics and real programs, but hedges rather than plans, and honest about the timescale — years for the first three questions, decades for these.
 
 ### Offshore wind — Tier 4, open-caveated
 
@@ -119,7 +143,7 @@ Gathered in one place, the signposts turn this survey from a snapshot into an in
 
 ## 05 SYNTHESIS
 
-Read against a single criterion — the fastest clean, firm, scalable megawatts per dollar, weighted toward clearing the bottleneck that actually binds — the landscape falls into a loose ordering. Tier 1 is the near-term workhorses: grid-enhancing tech and reconductoring, solar-plus-storage, and nuclear restarts. Tier 2 is the solid supporting cast: enhanced geothermal, onshore wind, and gas CCGT. Tier 3 is the high-value forward bet, SMRs. Tier 4 is the long-horizon and unproven: offshore wind, fusion, and space-based solar.
+The ranking is the four acts restated: unclog, fill cheap, firm it, hedge.
 
 *(figure: Cost vs speed-to-deploy — a sequencing lens — A sequencing lens: the most promising options are cheap, fast, and clean or firm — the lower-left, weighted toward clearing the connection bottleneck. It deliberately mixes AUDITED present costs (near-term avenues, near the midpoints of the Lazard ranges) with FORWARD, uncertain estimates; fusion and space-based solar sit in the cost-not-yet-demonstrated band with no plotted $/MWh. This is an OPEN-ARGUMENT sequencing lens, not a claim that any one technology wins.)*
 
@@ -143,13 +167,19 @@ This ranking is a sequencing lens, not a claim about which technology wins. Chan
 
 - **IEEFA '25** — Institute for Energy Economics and Financial Analysis (2025). Analysis of gas-turbine market tightness: five-to-seven-year lead times and roughly 300% price escalation for new-build CCGT equipment over three years. *IEEFA (2025), ieefa.org*
 
+- **Amperon '26** — Amperon (2026). Industry analysis aggregating 2024 US renewable curtailment: roughly 20 million MWh of wind+solar output deliberately not produced, largely because transmission was full, with four of seven ISOs setting records. Recorded here as an attributed industry aggregate, not a single reproducible primary. *Amperon curtailment analysis (2026), amperon.co*
+
+- **Modo Energy '25** — Modo Energy (2025). Analysis of ERCOT 2024 curtailment: more than 8 TWh of wind and solar curtailed in Texas alone as transmission out of West Texas saturated — the single largest ISO contributor to the national total. *Modo Energy, ERCOT curtailment analysis (2025), modoenergy.com*
+
+- **EIA TiE '25** — U.S. Energy Information Administration — Today in Energy (May 2025). Primary-source figure: CAISO curtailed 3.4 million MWh of wind and solar in 2024, up 29% year-over-year, with grid congestion a primary driver — the EIA-verified slice under the national curtailment aggregate. *EIA, Today in Energy (May 2025), eia.gov/todayinenergy*
+
 - **Columbia CGEP '26** — Columbia University Center on Global Energy Policy (2026). Analysis of grid-enhancing technologies and advanced reconductoring as fast, low-cost capacity on existing rights-of-way, under-deployed for incentive/regulatory reasons rather than technical ones. *Columbia CGEP (2026), energypolicy.columbia.edu*
 
 - **EIA STEO '26** — U.S. Energy Information Administration (2026). Short-Term Energy Outlook: near-term projections for the combined solar+wind share of US generation and for renewable capacity additions. *EIA, Short-Term Energy Outlook (2026), eia.gov/outlooks/steo*
 
-- **Wood Mackenzie '26** — Wood Mackenzie (2026). Market analysis of enhanced-geothermal cost trajectories and deployment outlook as the first commercial-scale plants come online. *Wood Mackenzie (2026), woodmac.com*
-
 - **World Nuclear News '24** — World Nuclear News (2024). Reporting on US reactor restarts and uprates, including the Crane Clean Energy Center (Three Mile Island Unit 1) restart plan and schedule. *World Nuclear News (2024), world-nuclear-news.org*
+
+- **Wood Mackenzie '26** — Wood Mackenzie (2026). Market analysis of enhanced-geothermal cost trajectories and deployment outlook as the first commercial-scale plants come online. *Wood Mackenzie (2026), woodmac.com*
 
 - **IEA '26** — International Energy Agency (2026). Assessment of small modular reactor economics and timelines, underscoring first-of-a-kind risk and that no Western SMR is yet in commercial operation. *IEA, nuclear / SMR outlook (2026), iea.org*
 
