@@ -127,7 +127,7 @@ labeled one is not.**
   resolves it true or refuted.
 
 ## What this project is
-The strategy room for **Dossier US-Electricity-001: U.S. Electricity (working title) — topic and thesis to be set during recon; this is a fresh spawn with no research entered yet.**
+The strategy room for **Dossier US-Grid: The State of US Electricity — current generation mix, emerging supply (advanced nuclear/SMRs, fusion, enhanced geothermal, storage), and projected demand growth from EVs, AI/datacenters, and broad electrification.**
 Connected repo: this synced repository. The dossier's two reading
 surfaces (the self-explaining front door and the audit trail), its manuscript, its
 verification script, and its claim ledger all live here.
@@ -137,11 +137,56 @@ verification script, and its claim ledger all live here.
   template's PLACEHOLDER avenue scaffolding and example citation chips; these
   get replaced during recon, wearing honest status labels from the moment real
   content lands.
-- Open claims: None entered yet — build during recon.
-- Open red-team findings: None yet.
-- [Note anything a fresh session must know once research begins: the topic's
-  sensitivities, the key prior work, the boldest claims and exactly how they're
-  labeled.]
+- Open claims: None formally entered yet — to be built during prior-art recon.
+  Anticipated structure: current-state figures (generation mix, installed
+  capacity, plant retirements, interconnection-queue volumes) will be asserted
+  as ESTABLISHED with primary-source citations. Every forward-looking number (EV
+  adoption curves, datacenter/AI load, electrification) is a forecast and will be
+  entered as OPEN-CAVEATED, each tagged with its source and its headline
+  assumptions. The central synthesis claim — that near-term load growth (the
+  first sustained US electricity demand growth in roughly two decades) is
+  outpacing the pace of generation interconnection and transmission buildout,
+  implying a supply/reliability gap in specific regions by specific years — is
+  the boldest claim and sits at OPEN-CAVEATED: defensible as a directional
+  argument, not as a precise prediction.
+- Open red-team findings: None yet — adversarial pass comes after the first draft.
+- Anything a fresh session must know:
+  - Nature of the dossier: this is a landscape / state-of-play synthesis, not a
+    single-hypothesis proposal. Its credibility comes from a clean separation of
+    measured present-state (ESTABLISHED, cited) from modeled future-state
+    (OPEN-CAVEATED, assumptions named). Never present a forecast as a fact; never
+    hedge a well-documented current figure into vagueness. That symmetry is the
+    whole discipline.
+  - Primary sources to map in recon (prefer these over aggregators): EIA (Annual
+    Energy Outlook, Electric Power Monthly, Short-Term Energy Outlook), FERC, NERC
+    (Long-Term Reliability Assessment), Lawrence Berkeley National Lab
+    (interconnection-queue reports), the RTO/ISOs (PJM, ERCOT, MISO, CAISO, SPP),
+    and dedicated load-growth analyses (Grid Strategies, EPRI, IEA, BNEF). Flag
+    think-tank or vendor material as adjacent-at-best and label accordingly.
+  - Current mix to characterize with the LATEST data (do not rely on memory for
+    figures — pull fresh during recon): natural gas (dominant), coal
+    (declining/retiring), nuclear (roughly flat, with notable restarts such as
+    Crane/Three Mile Island), and renewables + storage (utility solar, wind,
+    hydro, grid batteries) as the fastest-growing additions.
+  - Emerging supply to survey (the "upcoming sources/startups/projects" ask):
+    advanced nuclear / SMRs (NuScale, X-energy, Kairos, Oklo, TerraPower), fusion
+    (Commonwealth Fusion Systems, Helion, TAE), enhanced geothermal (Fervo),
+    long-duration storage (Form Energy), plus large-scale solar+storage and
+    offshore wind. Note maturity honestly — most are pre-commercial and their
+    timelines are OPEN-CAVEATED.
+  - Demand drivers to quantify: EVs, AI/hyperscale datacenters (the dominant new
+    variable — treat its projections with special care, since published estimates
+    diverge widely), manufacturing reshoring, building and industrial
+    electrification (heat pumps, industrial process heat), and crypto mining.
+  - The "areas we haven't considered" ask (explicit from the author): recon
+    should deliberately hunt for non-obvious or under-counted loads — hydrogen
+    electrolysis, desalination, datacenter cooling/water coupling, defense and
+    onshoring, and rising transmission/distribution losses. Give this its own scan
+    rather than treating it as a footnote.
+  - Labeling reminder: current figures = ESTABLISHED (cited); any "by year Y
+    demand will be X" or "there will be a shortfall of Z" = OPEN-CAVEATED with the
+    model and assumptions named, or EXPLORATORY-CONJECTURE if it is the author's
+    own extrapolation beyond any published forecast.
 
 ## Geography (three layers)
 1. **GitHub = the truth.** The synced repo is the canonical state.
