@@ -231,5 +231,65 @@ console.log("\nwastedecay geometry + labels:");
   });
 })();
 
+// --- 9) ratequestion geometry + label placement ------------------------------
+// The two-panel race figure draws horizontal bars (left) + a stacked bar (right);
+// this asserts (a) left bar widths are proportional to their values, (b) the right
+// stack segments sum to the full stack height, and (c) no two label boxes intersect.
+// Checks the REAL manuscript figure (read from the edition source) plus a synthetic.
+console.log("\nratequestion geometry + labels:");
+(function () {
+  var fs = require("fs"), path = require("path");
+  if (!global.window) global.window = {};
+  if (!global.window.DossierFigures) global.window.DossierFigures = F;
+  require("./ratequestion.js");
+  if (typeof F.renderRateQuestionLayout !== "function") { check("ratequestion exposes renderRateQuestionLayout", false); return; }
+  function firstHit(boxes, mg) {
+    for (var i = 0; i < boxes.length; i++) for (var j = i + 1; j < boxes.length; j++) {
+      var a = boxes[i], b = boxes[j];
+      if (!(a.r + mg < b.l || a.l - mg > b.r || a.b + mg < b.t || a.t - mg > b.b)) return i + "×" + j;
+    }
+    return null;
+  }
+  function assertLayout(tag, spec) {
+    var Lay = F.renderRateQuestionLayout(spec);
+    if (!Lay) { check(tag + ": layout computed", false); return; }
+    // (a) left bar solid widths proportional to their `end` values
+    var bars = spec.left.bars, ends = Lay.leftEnds, prop = ends.length === bars.length;
+    if (prop && ends.length >= 2) {
+      var w0 = ends[0].solid - Lay.barX, e0 = bars[0].end;
+      for (var i = 1; i < ends.length; i++) {
+        var wi = ends[i].solid - Lay.barX, ratio = wi / w0, expect = bars[i].end / e0;
+        if (Math.abs(ratio - expect) > 0.01) prop = false;
+      }
+    }
+    check(tag + ": " + ends.length + " left bars, widths proportional to values", prop);
+    // (b) right stack segments sum to the full stack height
+    var sum = Lay.segPx.reduce(function (a, x) { return a + x.h; }, 0);
+    check(tag + ": " + Lay.segPx.length + " stack segments sum to full height", Lay.segPx.length === spec.right.segments.length && Math.abs(sum - Lay.stackH) < 0.5);
+    // (c) no label overlaps
+    var hit = firstHit(Lay.labelBoxes, 0);
+    check(tag + ": " + Lay.labelBoxes.length + " label boxes, none intersect" + (hit ? " [" + hit + "]" : ""), Lay.labelBoxes.length > 0 && !hit);
+  }
+  var spec = null;
+  try {
+    var src = fs.readFileSync(path.join(__dirname, "..", "editions", "index.source.html"), "utf8");
+    var m = src.match(/data-figure='(\{"type":"ratequestion"[\s\S]*?)'>/);
+    if (m) spec = JSON.parse(m[1].replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
+  } catch (e) { /* not reachable -> synthetic only */ }
+  if (spec) assertLayout("manuscript ratequestion", spec);
+  else console.log("  (edition source not reachable here — running synthetic only)");
+  assertLayout("synthetic ratequestion", {
+    type: "ratequestion", stage: "#f3f6f5",
+    left: { title: "The race — TWh added per year", scaleMax: 160, note: "at record rates, new clean supply ≈ new demand",
+      bars: [{ label: "new demand", val: "~115–150", end: 115, endRange: 150, color: "#c0553f" },
+             { label: "new solar", val: "~95", end: 95, color: "#e0a92e" },
+             { label: "new wind", val: "~35", end: 35, color: "#1f8a70" }] },
+    right: { title: "A plausible 2035 mix (~5,700 TWh)", note: "batteries shift the day; the residual is the winter/firm problem",
+      segments: [{ label: "solar 20–25%", pct: 22, color: "#e0a92e" }, { label: "wind ~12%", pct: 12, color: "#1f8a70" },
+                 { label: "nuclear floor 15–18%", pct: 17, color: "#7a5ea8" }, { label: "hydro + other ~8%", pct: 9, color: "#2f7d9a" },
+                 { label: "gas + residual ~40%", pct: 40, color: "#8a949a" }] }
+  });
+})();
+
 console.log("\n" + (fails ? fails + " FAILURE(S)" : "all primitives passed") + ".");
 process.exit(fails ? 1 : 0);
