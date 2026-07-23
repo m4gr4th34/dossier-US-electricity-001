@@ -336,5 +336,59 @@ console.log("\nthreewaves rows + labels:");
   ] });
 })();
 
+// --- 11) mineralbill columns + label placement -------------------------------
+// The chokepoint figure draws two columns of tinted blocks; this asserts (a) one
+// block per spec entry per column, (b) every label stays inside its own column and
+// above the viewBox floor, and (c) no two label boxes intersect. Checks the REAL
+// manuscript figure plus a synthetic.
+console.log("\nmineralbill columns + labels:");
+(function () {
+  var fs = require("fs"), path = require("path");
+  if (!global.window) global.window = {};
+  if (!global.window.DossierFigures) global.window.DossierFigures = F;
+  require("./mineralbill.js");
+  if (typeof F.renderMineralBillLayout !== "function") { check("mineralbill exposes renderMineralBillLayout", false); return; }
+  function firstHit(boxes, mg) {
+    for (var i = 0; i < boxes.length; i++) for (var j = i + 1; j < boxes.length; j++) {
+      var a = boxes[i], b = boxes[j];
+      if (!(a.r + mg < b.l || a.l - mg > b.r || a.b + mg < b.t || a.t - mg > b.b)) return i + "×" + j;
+    }
+    return null;
+  }
+  function assertLayout(tag, spec) {
+    var L = F.renderMineralBillLayout(spec);
+    if (!L) { check(tag + ": layout computed", false); return; }
+    var countsOk = L.cols.length === spec.columns.length;
+    for (var i = 0; countsOk && i < L.cols.length; i++) if (L.cols[i].blocks !== spec.columns[i].blocks.length) countsOk = false;
+    check(tag + ": columns carry [" + L.cols.map(function (c) { return c.blocks; }).join(", ") + "] blocks as specified", countsOk);
+    var escaped = 0, maxB = 0;
+    for (var k = 0; k < L.labelBoxes.length; k++) {
+      var b = L.labelBoxes[k];
+      if (b.b > maxB) maxB = b.b;
+      if (b.col >= 0) { var c = L.cols[b.col]; if (b.l < c.x0 - 1 || b.r > c.x1 - 4) escaped++; }
+    }
+    check(tag + ": every label inside its column, nothing past the floor", escaped === 0 && maxB < L.H - 4);
+    var hit = firstHit(L.labelBoxes, 0);
+    check(tag + ": " + L.labelBoxes.length + " label boxes, none intersect" + (hit ? " [" + hit + "]" : ""), L.labelBoxes.length > 0 && !hit);
+  }
+  var spec = null;
+  try {
+    var src = fs.readFileSync(path.join(__dirname, "..", "editions", "index.source.html"), "utf8");
+    var m = src.match(/data-figure='(\{"type":"mineralbill"[\s\S]*?)'>/);
+    if (m) spec = JSON.parse(m[1].replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
+  } catch (e) { /* not reachable -> synthetic only */ }
+  if (spec) assertLayout("manuscript mineralbill", spec);
+  else console.log("  (edition source not reachable here — running synthetic only)");
+  assertLayout("synthetic mineralbill", { type: "mineralbill", stage: "#f3f6f5", columns: [
+    { title: "Robots", footer: ["one chokepoint, one holder"], blocks: [
+      { title: "rare-earth magnets (Nd · Pr · Dy · Tb)", tint: "#f7e9e5", accent: "#c0553f", lines: ["~90% China-controlled refining and manufacture", "export controls active — no near-term workaround"] } ] },
+    { title: "Reactors (SMRs)", footer: ["many small chokepoints — held by Russia (fixable),", "allies, and the US itself; rare-earth magnets:", "a rounding error"], blocks: [
+      { title: "HALEU", tint: "#efeaf6", accent: "#7a5ea8", lines: ["Russia sole commercial supplier; US onshoring underway"] },
+      { title: "Hafnium + zirconium", tint: "#e7f0f5", accent: "#2f7d9a", lines: ["France ~half of Hf; ore from Australia / S. Africa"] },
+      { title: "Graphite", tint: "#f9f0dd", accent: "#b0763c", lines: ["HTGR designs only — the one real China exposure"] },
+      { title: "Beryllium", tint: "#e6f2ef", accent: "#1f8a70", lines: ["US holds ~half of world supply"] } ] }
+  ] });
+})();
+
 console.log("\n" + (fails ? fails + " FAILURE(S)" : "all primitives passed") + ".");
 process.exit(fails ? 1 : 0);
