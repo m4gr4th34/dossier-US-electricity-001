@@ -291,5 +291,50 @@ console.log("\nratequestion geometry + labels:");
   });
 })();
 
+// --- 10) threewaves rows + label placement -----------------------------------
+// The scoreboard figure draws one band per wave with a status badge; this asserts
+// (a) one band per spec row with the open/closed flag preserved, (b) the stack fits
+// inside the viewBox and every label stays inside the band, and (c) no two label
+// boxes intersect. Checks the REAL manuscript figure plus a synthetic.
+console.log("\nthreewaves rows + labels:");
+(function () {
+  var fs = require("fs"), path = require("path");
+  if (!global.window) global.window = {};
+  if (!global.window.DossierFigures) global.window.DossierFigures = F;
+  require("./threewaves.js");
+  if (typeof F.renderThreeWavesLayout !== "function") { check("threewaves exposes renderThreeWavesLayout", false); return; }
+  function firstHit(boxes, mg) {
+    for (var i = 0; i < boxes.length; i++) for (var j = i + 1; j < boxes.length; j++) {
+      var a = boxes[i], b = boxes[j];
+      if (!(a.r + mg < b.l || a.l - mg > b.r || a.b + mg < b.t || a.t - mg > b.b)) return i + "×" + j;
+    }
+    return null;
+  }
+  function assertLayout(tag, spec) {
+    var L = F.renderThreeWavesLayout(spec);
+    if (!L) { check(tag + ": layout computed", false); return; }
+    var flagsOk = L.rows.length === spec.rows.length;
+    for (var i = 0; flagsOk && i < L.rows.length; i++) if (L.rows[i].open !== !!spec.rows[i].open) flagsOk = false;
+    check(tag + ": " + L.rows.length + " bands, open/closed flags preserved", flagsOk);
+    var maxR = 0; for (var k = 0; k < L.labelBoxes.length; k++) if (L.labelBoxes[k].r > maxR) maxR = L.labelBoxes[k].r;
+    check(tag + ": stack fits the viewBox and labels stay inside the band", L.bottom <= L.H - 4 && maxR <= 768);
+    var hit = firstHit(L.labelBoxes, 0);
+    check(tag + ": " + L.labelBoxes.length + " label boxes, none intersect" + (hit ? " [" + hit + "]" : ""), L.labelBoxes.length > 0 && !hit);
+  }
+  var spec = null;
+  try {
+    var src = fs.readFileSync(path.join(__dirname, "..", "editions", "index.source.html"), "utf8");
+    var m = src.match(/data-figure='(\{"type":"threewaves"[\s\S]*?)'>/);
+    if (m) spec = JSON.parse(m[1].replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&"));
+  } catch (e) { /* not reachable -> synthetic only */ }
+  if (spec) assertLayout("manuscript threewaves", spec);
+  else console.log("  (edition source not reachable here — running synthetic only)");
+  assertLayout("synthetic threewaves", { type: "threewaves", stage: "#f3f6f5", rows: [
+    { title: "Wave 1 — Solar", status: "window CLOSED", open: false, lines: ["China holds 98% of wafers, 92% of cells, 85% of panels", "China added ~280 GW in 2025 — more than the US cumulative base"] },
+    { title: "Wave 2 — Batteries", status: "window CLOSED", open: false, lines: ["China makes ~75% of lithium-ion cells; CATL + BYD exceed 55%", "The US consumes at a ~44% premium on a ~3 GW cell base"] },
+    { title: "Wave 3 — Advanced nuclear (SMRs, fast spectrum, HALEU)", status: "window OPEN", open: true, lines: ["First-deploy race lost: Linglong One in service H1 2026", "But the next-wave chain is not yet owned by anyone", "US strengths: designs, capital, demand pull, HALEU onshoring"] }
+  ] });
+})();
+
 console.log("\n" + (fails ? fails + " FAILURE(S)" : "all primitives passed") + ".");
 process.exit(fails ? 1 : 0);
